@@ -2,11 +2,40 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: 
+years: [2022, 2021, 2019, 2018]
+years2: [2016, 2015]
 nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+<!-- _pages/teaching.md -->
+<div class="publications">
+  <header class="post-header">
+    <h1 class="post-title">at the university level</h1>
+  </header>
 
-Organize your courses by years, topics, or universities, however you like!
+  <article>
+
+{%- for y in page.years %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f teaching -q @*[year={{y}}]* %}
+{% endfor %}
+  </article>
+  
+  </div>
+  
+  <div class="publications">
+  <header class="post-header">
+    <h1 class="post-title">at the middle/high school level</h1>
+  </header>
+
+  <article>
+
+{%- for y in page.years2 %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f olimat -q @*[year={{y}}]* %}
+{% endfor %}
+  </article>
+  
+  </div>
