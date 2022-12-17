@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: peer-reviewed publications in international Journals and Conferences
+description:
 years: [2022, 2021]
 nav: true
 nav_order: 1
