@@ -3,7 +3,7 @@ layout: page
 permalink: /publications/
 title: publications
 description:
-yearsPeer: [2022, 2021]
+yearsPeer: [2023, 2022, 2021]
 yearsPre: [2023]
 yearsOther: [2023]
 nav: true
