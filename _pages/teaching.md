@@ -12,7 +12,7 @@ nav_order: 5
 <!-- _pages/teaching.md -->
 <div class="publications">
   <header class="post-header">
-    <h1 class="post-title">at the university level</h1>
+    <h1 class="post-title">at university</h1>
   </header>
 
   <article>
@@ -27,7 +27,7 @@ nav_order: 5
   
   <div class="publications">
   <header class="post-header">
-    <h1 class="post-title">at the middle/high school level</h1>
+    <h1 class="post-title">at middle/high school</h1>
   </header>
 
   <article>
