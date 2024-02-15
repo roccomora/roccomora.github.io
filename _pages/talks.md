@@ -4,7 +4,11 @@ permalink: /talks/
 title: talks
 description: 
 years: [2023, 2022, 2021]
+<<<<<<< HEAD
 years2: [2024, 2023, 2022, 2021, 2020]
+=======
+years2: [2023, 2022, 2021, 2020]
+>>>>>>> 9657ae9a854cc5dca6d2155812e5f2c01fc38587
 nav: true
 ---
 
