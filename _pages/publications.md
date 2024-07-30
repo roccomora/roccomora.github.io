@@ -3,8 +3,8 @@ layout: page
 permalink: /publications/
 title: publications
 description:
-yearsPeer: [2023, 2022, 2021]
-yearsPre: [2023]
+yearsPeer: [2024, 2023, 2022, 2021]
+yearsPre: []
 yearsOther: [2023]
 nav: true
 nav_order: 1
@@ -28,7 +28,7 @@ nav_order: 1
   </article>
 
 
-<div class="publications">
+<! --- div class="publications">
   <header class="post-header" style="margin-top:1.5cm;">
     <h1 class="post-title">preprints</h1>
     <p class="post-description">{{ page.description }}</p>
