@@ -7,7 +7,7 @@ yearsPeer: [2024, 2023, 2022, 2021]
 yearsPre: []
 yearsOther: [2023]
 nav: true
-nav_order: 1
+nav_order = 1
 ---
 <!-- _pages/publications.md -->
 
@@ -27,22 +27,6 @@ nav_order: 1
 </div>
   </article>
 
-
-<! --- div class="publications">
-  <header class="post-header" style="margin-top:1.5cm;">
-    <h1 class="post-title">preprints</h1>
-    <p class="post-description">{{ page.description }}</p>
-  </header>
-</div>
-
-  <article>
-  <div class="publications">
-    {% for y in page.yearsPre %}
-  <h2 class="year">{{y}}</h2>
-  {% bibliography -f preprints -q @*[year={{y}}]* %}
-{% endfor %}
-</div>
-  </article>
   
   
 <div class="publications">
