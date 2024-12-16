@@ -38,7 +38,7 @@ nav_order: 2
   <div class="publications">
     {% for y in page.yearsPre %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
+  {% bibliography -f preprints -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
   </article>
