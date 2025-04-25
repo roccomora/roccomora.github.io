@@ -1,0 +1,285 @@
+I"; <!-- _pages/publications.md -->
+
+<div class="publications">
+  <header class="post-header" style="margin-top:1.5cm;">
+    <h1 class="post-title">peer-reviewed publications</h1>
+    <p class="post-description"></p>
+  </header>
+</div>
+
+<article>
+  <div class="publications">
+    
+  <h2 class="year">2025</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">AMC</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="M25" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">On the matrix code of quadratic relationships for a Goppa code</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          <em>Rocco Mora</em></div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>Advances in Mathematics of Communications</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://arxiv.org/abs/2310.20497" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2024</h2>
+  <ol class="bibliography"></ol>
+
+  <h2 class="year">2023</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">Asiacrypt 2023</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="CMT23" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">A new approach based on quadratic forms to attack the McEliece cryptosystem</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Alain Couvreur,&nbsp;<em>Rocco Mora</em>,&nbsp;and&nbsp;Jean-Pierre Tillich</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>In Asiacrypt 2023</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://eprint.iacr.org/2023/950" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TIT</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="BMT23" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Polynomial time key-recovery attack on high rate random alternant codes</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Magali Bardet,&nbsp;<em>Rocco Mora</em>,&nbsp;and&nbsp;Jean-Pierre Tillich</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>IEEE Transactions on Information Theory</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://arxiv.org/abs/2304.14757" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">DCC</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="MT23" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">On the dimension and structure of the square of the dual of a Goppa code</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          <em>Rocco Mora</em>,&nbsp;and&nbsp;Jean-Pierre Tillich</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>Designs, Codes and Cryptography</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://arxiv.org/abs/2111.13038" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2022</h2>
+  <ol class="bibliography"></ol>
+
+  <h2 class="year">2021</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">ISIT 2021</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="BMT21" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Decoding Reed-Solomon codes by solving a bilinear system with a Gr&#246;bner basis approach</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Magali Bardet,&nbsp;<em>Rocco Mora</em>,&nbsp;and&nbsp;Jean-Pierre Tillich</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>In 2021 IEEE International Symposium on Information Theory (ISIT)</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://arxiv.org/abs/2102.02544" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+</div>
+  </article>
+
+<div class="publications">
+  <header class="post-header" style="margin-top:1.5cm;">
+    <h1 class="post-title">preprints</h1>
+    <p class="post-description"></p>
+  </header>
+</div>
+
+<article>
+  <div class="publications">
+    
+  <h2 class="year">2025</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="JM25" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">The regular multivariate quadratic problem</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Antoine Joux,&nbsp;and&nbsp;<em>Rocco Mora</em></div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://arxiv.org/abs/2503.07342" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2024</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="LMT24" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Understanding the new distinguisher of alternant codes at degree 2</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          Axel Lemoine,&nbsp;<em>Rocco Mora</em>,&nbsp;and&nbsp;Jean-Pierre Tillich</div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            <em>In WCC 2024 : Thirteenth International Workshop on Coding and Cryptography</em>
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://inria.hal.science/hal-04953992v1/file/submission.pdf" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+</div>
+  </article>
+
+<div class="publications">
+  <header class="post-header" style="margin-top:1.5cm;">
+    <h1 class="post-title">other</h1>
+    <p class="post-description"></p>
+  </header>
+</div>
+
+<article>
+  <div class="publications">
+    
+  <h2 class="year">2023</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">Ph.D. thesis</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="M23" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Algebraic techniques for decoding Reed-Solomon codes
+and cryptanalyzing McEliece-like cryptosystems</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          <em>Rocco Mora</em></div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            </div><!-- Links/Buttons -->
+          <div class="links">
+            <a href="https://theses.hal.science/tel-04153803v1" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+</div>
+  </article>
+
+:ET

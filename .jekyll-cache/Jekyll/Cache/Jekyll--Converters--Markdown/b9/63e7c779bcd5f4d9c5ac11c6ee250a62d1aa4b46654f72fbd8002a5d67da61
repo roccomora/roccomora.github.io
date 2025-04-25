@@ -1,0 +1,7 @@
+I"Ï<p>I am currently a postdoctoral researcher at <a href="https://cispa.de/en">CISPA - Helmholtz Center for Information Security</a> (Germany) in the <a href="https://cispa.de/en/research/groups/joux">Algorithmic Cryptology</a> group led by <a href="https://cispa.de/en/people/c01anjo">Antoine Joux</a>. Before, I have been a PhD student in the project-team <a href="https://www.rocq.inria.fr/secret/inde-en.html">COSMIQ</a> at <a href="https://www.inria.fr/en">Inria Paris</a> (France), working under the supervision of <a href="https://www.paris.inria.fr/secret/Jean-Pierre.Tillich/">Jean-Pierre Tillich</a>.</p>
+
+<p>My current research interests lie primarily in the area of <strong>post-quantum cryptography</strong>, whose aim is to study cryptographic systems that are considered secure even against quantum algorithms. In particular, my research focuses on the cryptanalysis of schemes coming from <strong>code-based cryptography</strong> and <strong>multivariate cryptography</strong> through techniques borrowed from <strong>computational algebra</strong>, such as <strong>Gr√∂bner bases</strong>. 
+I am also interested in several aspects of <strong>algebraic coding theory</strong>.</p>
+
+<p>My CV can be found <a href="assets/pdf/CV.pdf">here</a>.</p>
+:ET

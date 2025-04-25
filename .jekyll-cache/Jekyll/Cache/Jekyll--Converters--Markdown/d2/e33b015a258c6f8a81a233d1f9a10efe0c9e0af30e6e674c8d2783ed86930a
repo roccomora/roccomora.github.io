@@ -1,0 +1,250 @@
+I"�<!-- _pages/teaching.md -->
+<div class="publications">
+  <header class="post-header">
+    <h1 class="post-title">at university</h1>
+  </header>
+
+  <article>
+  <h2 class="year">2022</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">INF442</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="INF442_22" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">TA of "Algorithms for Data analysis in C++"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>École Polytechnique, France</em> <br />
+             Introduction to C++ and applications to data analysis techniques for second year students of the "Cycle Ingénieur polytechnicien"
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2021</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">CSE102</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="CSE102_21" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">TA of "Computer Programming"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>École Polytechnique, France</em> <br />
+             Second course in Python for first year students of the Bachelor of Science
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">INF442</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="INF442_21" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">TA of "Algorithms for Data analysis in C++"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>École Polytechnique, France</em> <br />
+             
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2019</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="Java19" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">TA of "Computer Programming 2"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>University of Trento, Italy</em> <br />
+             Introduction to object-oriented programming and Java for first year Bachelor’s students in Computer Science and Engineering
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2018</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="Inf18" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">TA of "Informatics"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>University of Trento, Italy</em> <br />
+             Introduction to computer science for first year Bachelor’s students in Mathematics
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  </article>
+  
+  </div>
+
+<div class="publications">
+  <header class="post-header">
+    <h1 class="post-title">at middle/high school</h1>
+  </header>
+
+  <article>
+  <h2 class="year">2016</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="Olimat_14_16" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Trainer for "Italian Mathematical Olympiad"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>Liceo G. Marconi, Parma, Italy</em> <br />
+             Trainer for local individual and team competitions of math Olympiad for high school students
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  <h2 class="year">2015</h2>
+  <ol class="bibliography"><li><!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"></div>
+
+        <!-- Entry bib key -->
+        <div id="Bocconi_15" class="col-sm-8">
+        
+          <!-- Title -->
+          <div class="title">Trainer for "Giochi della Bocconi"</div>
+          <!-- Author -->
+          <div class="author">
+          
+
+          </div>
+
+          <!-- Journal/Book title and date -->
+          
+          <div class="periodical">
+            
+            
+        
+             <em>Liceo G. Marconi, Parma, Italy</em> <br />
+             Trainer for local competitions of "Championnat International de Jeux Mathématiques et Logiques" for middle school students
+            </div><!-- Links/Buttons -->
+          <div class="links">
+          </div>
+
+          
+        </div>
+      </div>
+</li></ol>
+
+  </article>
+  
+  </div>
+:ET
