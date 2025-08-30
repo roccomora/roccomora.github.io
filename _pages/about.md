@@ -16,6 +16,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 I am *ma&#238;tre de conf&#233;rences* at the computer science department of Universit&#233; de Montpellier (France) and part of the [ECO](https://www.lirmm.fr/eco/index.php) team at [LIRMM](https://www.lirmm.fr/).
+
 Before, I have been a postdoctoral researcher at [CISPA - Helmholtz Center for Information Security](https://cispa.de/en) (Germany) in the [Algorithmic Cryptology](https://cispa.de/en/research/groups/joux) group led by [Antoine Joux](https://cispa.de/en/people/c01anjo). Before that, I obtained my PhD within the project-team [COSMIQ](https://www.rocq.inria.fr/secret/inde-en.html) at [Inria Paris](https://www.inria.fr/en) (France), working under the supervision of [Jean-Pierre Tillich](https://www.paris.inria.fr/secret/Jean-Pierre.Tillich/). 
 
 My current research interests lie primarily in the area of **post-quantum cryptography**, whose aim is to study cryptographic systems that are considered secure even against quantum algorithms. In particular, my research focuses on the cryptanalysis of schemes coming from **code-based cryptography** and **multivariate cryptography** through techniques borrowed from **computational algebra**, such as **Gr&#246;bner bases**. 
