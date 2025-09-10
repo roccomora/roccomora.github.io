@@ -5,7 +5,7 @@ title: teaching
 description: 
 years_montpellier: [2025]
 years_stud: [2022, 2021, 2019, 2018]
-years2: [2016, 2015]
+years_oli: [2016, 2015]
 nav: true
 nav_order: 3
 ---
@@ -19,7 +19,7 @@ nav_order: 3
 
   <article>
 
-{%- for y in page.years2 %}
+{%- for y in page.years_montpellier %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f teaching_UM -q @*[year={{y}}]* %}
 {% endfor %}
@@ -49,7 +49,7 @@ nav_order: 3
 
   <article>
 
-{%- for y in page.years2 %}
+{%- for y in page.years_oli %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f olimat -q @*[year={{y}}]* %}
 {% endfor %}
