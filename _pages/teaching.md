@@ -29,7 +29,7 @@ nav_order: 3
   
 <div class="publications">
   <header class="post-header">
-    <h1 class="post-title">previous teaching at university</h1>
+    <h1 class="post-title">previous teaching assistance at university</h1>
   </header>
 
   <article>
