@@ -3,7 +3,8 @@ layout: page
 permalink: /publications/
 title: publications
 description:
-yearsPeer: [2025, 2024, 2023, 2021]
+yearsJournals: [2025, 2024, 2023]
+yearsConf: [2025, 2023, 2021]
 yearsPre: [2025]
 yearsOther: [2023]
 nav: true
@@ -29,16 +30,32 @@ nav_order: 2
   
 <div class="publications">
   <header class="post-header" style="margin-top:1.5cm;">
-    <h1 class="post-title">peer-reviewed publications</h1>
+    <h1 class="post-title">journals</h1>
     <p class="post-description">{{ page.description }}</p>
   </header>
 </div>
 
   <article>
   <div class="publications">
-    {% for y in page.yearsPeer %}
+    {% for y in page.yearsJournals %}
   <h2 class="year">{{y}}</h2>
-  {% bibliography -f papers -q @*[year={{y}}]* %}
+  {% bibliography -f journals -q @*[year={{y}}]* %}
+{% endfor %}
+</div>
+  </article>
+
+<div class="publications">
+  <header class="post-header" style="margin-top:1.5cm;">
+    <h1 class="post-title">conference proceedings</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+</div>
+
+  <article>
+  <div class="publications">
+    {% for y in page.yearsConf %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f proceedings -q @*[year={{y}}]* %}
 {% endfor %}
 </div>
   </article>
