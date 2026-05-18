@@ -4,7 +4,7 @@ permalink: /publications/
 title: publications
 description:
 yearsJournals: [2025, 2024, 2023]
-yearsConf: [2025, 2023, 2021]
+yearsConf: [2026, 2025, 2023, 2021]
 yearsPre: [2025]
 yearsOther: [2023]
 nav: true
