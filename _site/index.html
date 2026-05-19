@@ -130,16 +130,17 @@
 
 
 <picture>
-  <!-- User prefers light mode: -->
-  <source srcset="/assets/img/qr.jpg" media="(prefers-color-scheme: light)"/>
+  <img
+  src="{{ 'assets/img/foto.jpg' | relative_url }}"
+  class="img-fluid z-depth-1 rounded profile-light"
+  />
 
-  <!-- User prefers dark mode: -->
-  <source srcset="/assets/img/qr.jpg"  media="(prefers-color-scheme: dark)"/>
-
-  <!-- User has no color preference: -->
-  <img src="/assets/img/qr.jpg" alt="Description of what the image shows"/>
+  <img
+  src="{{ 'assets/img/qr.jpg' | relative_url }}"
+  class="img-fluid z-depth-1 rounded profile-dark"
+  />
 </picture>
-
+   
 
 </figure>
 

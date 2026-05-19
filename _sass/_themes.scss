@@ -31,6 +31,10 @@
   .repo-img-dark {
     display: none;
   }
+  .profile-dark {
+  display: none;
+  }
+
 }
 
 html[data-theme='dark'] {
@@ -62,4 +66,13 @@ html[data-theme='dark'] {
   .repo-img-dark {
     display: block;
   }
+  
+  .profile-light {
+  display: none;
+  }
+
+  .profile-dark {
+  display: block;
+  }
+
 }
