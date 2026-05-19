@@ -128,13 +128,18 @@
 
               <figure>
 
-  <picture>
-    
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/foto.jpg" class="img-fluid z-depth-1 rounded" width="auto" height="auto" alt="foto.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<picture>
+  <!-- User prefers light mode: -->
+  <source srcset="/assets/img/foto.jpg" media="(prefers-color-scheme: light)"/>
 
-  </picture>
+  <!-- User prefers dark mode: -->
+  <source srcset="/assets/img/qr.jpg"  media="(prefers-color-scheme: dark)"/>
+
+  <!-- User has no color preference: -->
+  <img src="/assets/img/foto.jpg" alt="Description of what the image shows"/>
+</picture>
+
 
 </figure>
 
