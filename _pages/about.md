@@ -7,7 +7,6 @@ subtitle:
 profile:
   align: right
   image: foto.jpg
-  dark_image: qr.jpg
   image_circular: false # crops the image to make it circular
 
 
