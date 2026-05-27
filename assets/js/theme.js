@@ -50,12 +50,13 @@ let transTheme = () => {
 
 
 let initTheme = (theme) => {
-  if (theme == null || theme == 'null') {
-    const userPref = window.matchMedia;
-    if (userPref && (userPref('(prefers-color-scheme: light)').matches || userPref('(max-width: 768px)').matches || true)) {
-        theme = 'light';
-    }
+  if (theme == null || theme === 'null') {
+    theme = 'light'; // always default to light
   }
+
+  document.documentElement.setAttribute('data-theme', theme);
+  return theme;
+};
   
   setTheme(theme);
 }
