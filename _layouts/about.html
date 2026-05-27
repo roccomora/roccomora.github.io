@@ -23,20 +23,25 @@ layout: default
                 {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
               {% endif %}
 
-              <!-- Light mode profile image -->
+{% assign light_profile_class = profile_image_class | append: ' profile-light' %}
+
+<!-- Light mode profile image -->
 {% include figure.html 
 path=profile_image_path 
-class=profile_image_class | append: ' profile-light'
+class=light_profile_class
 alt=page.profile.image -%}
 
 <!-- Dark mode profile image -->
 {% if page.profile.dark_image %}
+
   {% assign dark_profile_image_path = page.profile.dark_image | prepend: 'assets/img/' %}
+  {% assign dark_profile_class = profile_image_class | append: ' profile-dark' %}
 
   {% include figure.html 
   path=dark_profile_image_path 
-  class=profile_image_class | append: ' profile-dark'
+  class=dark_profile_class
   alt=page.profile.dark_image -%}
+
 {% endif %}
             {% endif -%}
             {%- if page.profile.address %}
