@@ -1,12 +1,13 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-let toggleTheme = (theme) => {
-  if (theme == "dark") {
-    setTheme("light");
-  } else {
-    setTheme("dark");
-  }
-}
+let toggleTheme = () => {
+  let current = document.documentElement.getAttribute('data-theme');
+
+  let newTheme = current === 'dark' ? 'light' : 'dark';
+
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+};
 
 
 let setTheme = (theme) =>  {
@@ -50,8 +51,14 @@ let transTheme = () => {
 
 
 let initTheme = (theme) => {
-  if (theme == null || theme === 'null') {
-    theme = 'light'; // always default to light
+  // only set default if nothing stored
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    theme = savedTheme;
+  } else {
+    theme = 'light'; // default only once
+    localStorage.setItem('theme', theme);
   }
 
   document.documentElement.setAttribute('data-theme', theme);
