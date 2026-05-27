@@ -41,6 +41,5 @@ let initTheme = () => {
   document.documentElement.setAttribute("data-theme", theme);
 };
 
-initTheme();
   
 
