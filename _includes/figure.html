@@ -13,24 +13,52 @@
     {% endfor -%}
     {% endif %}
 
-    <!-- Fallback to the original file -->
-    <img 
-      src="{{ include.path | relative_url }}"
-      {% if include.class %}class="{{ include.class }}"{% endif %}  
-      {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %} 
-      {% if include.height %}height="{{ include.height }}"{% else %}height="auto"{% endif %} 
-      {% if include.min-width %}min-width="{{ include.min-width }}"{% endif %} 
-      {% if include.min-height %}min-height="{{ include.min-height }}"{% endif %} 
-      {% if include.max-width %}max-width="{{ include.max-width }}"{% endif %} 
-      {% if include.max-height %}height="{{ include.max-height }}"{% endif %} 
-      {% if include.alt %}alt="{{ include.alt }}"{% endif %} 
-      {% if include.title %}title="{{ include.title }}"{% endif %} 
-      {% if include.zoomable %}data-zoomable{% endif %}
-      onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
-    />
+    {% if page.profile
+       and include.path contains page.profile.image
+       and page.profile.dark_image %}
+
+      <!-- Light mode image -->
+      <img 
+        src="{{ '/assets/img/' | append: page.profile.image | relative_url }}"
+        class="{% if include.class %}{{ include.class }} {% endif %}profile-light"
+        {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %}
+        {% if include.height %}height="{{ include.height }}"{% else %}height="auto"{% endif %}
+        {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+      />
+
+      <!-- Dark mode image -->
+      <img 
+        src="{{ '/assets/img/' | append: page.profile.dark_image | relative_url }}"
+        class="{% if include.class %}{{ include.class }} {% endif %}profile-dark"
+        {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %}
+        {% if include.height %}height="{{ include.height }}"{% else %}height="auto"{% endif %}
+        {% if include.alt %}alt="{{ include.alt }}"{% endif %}
+      />
+
+    {% else %}
+
+      <!-- Normal image behavior -->
+      <img 
+        src="{{ include.path | relative_url }}"
+        {% if include.class %}class="{{ include.class }}"{% endif %}  
+        {% if include.width %}width="{{ include.width }}"{% else %}width="auto"{% endif %} 
+        {% if include.height %}height="{{ include.height }}"{% else %}height="auto"{% endif %} 
+        {% if include.min-width %}min-width="{{ include.min-width }}"{% endif %} 
+        {% if include.min-height %}min-height="{{ include.min-height }}"{% endif %} 
+        {% if include.max-width %}max-width="{{ include.max-width }}"{% endif %} 
+        {% if include.max-height %}height="{{ include.max-height }}"{% endif %} 
+        {% if include.alt %}alt="{{ include.alt }}"{% endif %} 
+        {% if include.title %}title="{{ include.title }}"{% endif %} 
+        {% if include.zoomable %}data-zoomable{% endif %}
+        onerror="this.onerror=null; $('.responsive-img-srcset').remove();"
+      />
+
+    {% endif %}
 
   </picture>
 
-  {%- if include.caption -%}<figcaption class="caption">{{ include.caption }}</figcaption>{%- endif %}
+  {%- if include.caption -%}
+    <figcaption class="caption">{{ include.caption }}</figcaption>
+  {%- endif %}
 
 </figure>
