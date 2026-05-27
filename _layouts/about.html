@@ -25,24 +25,20 @@ layout: default
 
 {% assign light_profile_class = profile_image_class | append: ' profile-light' %}
 
-<!-- Light mode profile image -->
-{% include figure.html 
-path=profile_image_path 
-class=light_profile_class
-alt=page.profile.image -%}
+{% assign light_profile = page.profile.image | prepend: 'assets/img/' %}
+{% assign dark_profile = page.profile.dark_image | prepend: 'assets/img/' %}
 
-<!-- Dark mode profile image -->
-{% if page.profile.dark_image %}
+<img 
+  src="{{ light_profile | relative_url }}"
+  class="{{ profile_image_class }} profile-light"
+  alt="Profile photo"
+/>
 
-  {% assign dark_profile_image_path = page.profile.dark_image | prepend: 'assets/img/' %}
-  {% assign dark_profile_class = profile_image_class | append: ' profile-dark' %}
-
-  {% include figure.html 
-  path=dark_profile_image_path 
-  class=dark_profile_class
-  alt=page.profile.dark_image -%}
-
-{% endif %}
+<img 
+  src="{{ dark_profile | relative_url }}"
+  class="{{ profile_image_class }} profile-dark"
+  alt="Profile photo"
+/>
             {% endif -%}
             {%- if page.profile.address %}
             <div class="address">
