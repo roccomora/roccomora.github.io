@@ -28,18 +28,16 @@ let transTheme = () => {
     document.documentElement.classList.remove("transition");
   }, 500)
 }
-
-
+  
 let initTheme = () => {
   const savedTheme = localStorage.getItem("theme");
 
   const theme = (savedTheme === "dark" || savedTheme === "light")
     ? savedTheme
-    : "light";
+    : "dark";   // 👈 default is now DARK
 
-  localStorage.setItem("theme", theme);
   document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 };
 
-  
-
+initTheme();
