@@ -6,7 +6,6 @@ let toggleTheme = () => {
   const newTheme = current === "dark" ? "light" : "dark";
 
   document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
 };
 
 
@@ -30,13 +29,9 @@ let transTheme = () => {
 }
   
 let initTheme = () => {
-  const savedTheme = localStorage.getItem("theme");
-
-  document.documentElement.setAttribute(
-    "data-theme",
-    savedTheme || "dark"
-  );
+  document.documentElement.setAttribute("data-theme", "dark");
 };
+
 
 initTheme();
 
