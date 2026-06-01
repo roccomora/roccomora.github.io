@@ -32,12 +32,11 @@ let transTheme = () => {
 let initTheme = () => {
   const savedTheme = localStorage.getItem("theme");
 
-  const theme = (savedTheme === "dark" || savedTheme === "light")
-    ? savedTheme
-    : "dark";   // 👈 default is now DARK
-
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
+  document.documentElement.setAttribute(
+    "data-theme",
+    savedTheme || "dark"
+  );
 };
 
 initTheme();
+
