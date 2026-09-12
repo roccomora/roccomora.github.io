@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Game of Life Puzzle
-permalink: /game/
+title: Path of Life
+permalink: /path/
 nav: false
 #nav_order: 5
 ---
@@ -154,7 +154,7 @@ nav: false
 
     <div class="slider-group">
       <label for="flipsSlider">Flips Allowed per Step:</label>
-      <input type="range" id="flipsSlider" min="1" max="5" value="2">
+      <input type="range" id="flipsSlider" min="0" max="5" value="2">
       <span class="slider-value" id="flipsVal">2</span>
     </div>
 
