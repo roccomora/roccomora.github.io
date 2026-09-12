@@ -1,28 +1,28 @@
 ---
 layout: page
 title: Conway's Mutations
-permalink: /game/
+permalink: /conway/
 nav: false
 sitemap: false
 ---
 
-# Conway's Mutations
-
 **Conway's Mutations** is a puzzle game inspired by John Conway's famous [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) cellular automaton.
 
 ### Evolution Rules
-At each step, the grid evolves according to the classic Game of Life rules:
-* **Underpopulation:** Any live cell with fewer than two live neighbors dies.
-* **Survival:** Any live cell with two or three live neighbors lives on to the next generation.
-* **Overpopulation:** Any live cell with more than three live neighbors dies.
-* **Reproduction:** Any dead cell with exactly three live neighbors becomes a live cell.
+The grid consists of **black cells (alive)** and **white cells (dead)**. At each step, the grid evolves according to the classic Game of Life rules:
+* **Underpopulation:** Any live (black) cell with fewer than two live neighbors dies (turns white).
+* **Survival:** Any live (black) cell with two or three live neighbors lives on to the next generation.
+* **Overpopulation:** Any live (black) cell with more than three live neighbors dies (turns white).
+* **Reproduction:** Any dead (white) cell with exactly three live neighbors becomes a live (black) cell.
 
 ### How to Play
-Before each step, you can induce **mutations** by clicking on cells to flip their state (alive to dead, or vice versa). Once you have placed your mutations for the step, advance the board to let the evolution rules take over.
+Before advancing each step, you can induce **mutations** by clicking on cells on the left grid to flip their state (black to white or vice versa). 
+* Mutated cells are highlighted with a **red border** so you can easily track your changes.
+* Clicking a mutated cell again will revert it to its original step state and remove the red border.
 
-Your goal is to reach the **Target Configuration** (on the right) in exactly the prescribed number of steps.
+Once you have placed your mutations for the current step, click **Advance Step** to let the evolution rules take over. Your goal is to match the **Target Configuration** (on the right) in exactly the prescribed number of steps.
 
-> **Pro-Tip:** *Conway's Mutations* is considerably harder than it looks! Because a single mutated cell can completely alter the future of the entire grid, we strongly recommend starting with **1 step** while you get a feel for the mechanics.
+> **Pro-Tip:** *Conway's Mutations* is harder than it looks! Because a single mutated cell can dramatically alter the future of the entire grid, we strongly recommend starting with **1 step** while learning the mechanics.
 
 <style>
   .game-container {
@@ -95,11 +95,17 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
   }
 
   .grid-cell.alive {
     background-color: #111111;
+  }
+
+  /* Red inner border highlighting mutated cells */
+  .grid-cell.mutated {
+    box-shadow: inset 0 0 0 3px #dc3545;
   }
 
   .interactive .grid-cell {
@@ -107,7 +113,7 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
   }
 
   .interactive .grid-cell:hover {
-    opacity: 0.8;
+    opacity: 0.85;
   }
 
   .game-status {
@@ -154,7 +160,6 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
 
 {% raw %}
 <div class="game-container">
-  <p>Reach the <strong>Target Configuration</strong> in the given number of steps! Click on cells on the left grid to flip their state (up to your allowed flips limit per step) before moving to the next generation.</p>
 
   <!-- Controls Panel -->
   <div class="controls-panel">
@@ -166,12 +171,12 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
     
     <div class="slider-group">
       <label for="stepsSlider">Steps Required:</label>
-      <input type="range" id="stepsSlider" min="1" max="8" value="3">
-      <span class="slider-value" id="stepsVal">3</span>
+      <input type="range" id="stepsSlider" min="1" max="8" value="1">
+      <span class="slider-value" id="stepsVal">1</span>
     </div>
 
     <div class="slider-group">
-      <label for="flipsSlider">Flips Allowed per Step:</label>
+      <label for="flipsSlider">Mutations Allowed per Step:</label>
       <input type="range" id="flipsSlider" min="0" max="5" value="2">
       <span class="slider-value" id="flipsVal">2</span>
     </div>
@@ -183,8 +188,8 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
 
   <!-- Game Info / Status Bar -->
   <div class="game-status">
-    <div>Step: <strong id="currentStepText">0</strong> / <strong id="totalStepsText">3</strong></div>
-    <div>Flips remaining in this step: <strong id="flipsLeftText">2</strong></div>
+    <div>Step: <strong id="currentStepText">0</strong> / <strong id="totalStepsText">1</strong></div>
+    <div>Mutations left in this step: <strong id="flipsLeftText">2</strong></div>
   </div>
 
   <!-- Boards Side by Side -->
@@ -201,7 +206,7 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
 
   <!-- Action Buttons -->
   <div class="btn-action-group">
-    <button class="btn btn-secondary" id="btnResetStep">Reset Step Flips</button>
+    <button class="btn btn-secondary" id="btnResetStep">Reset Step Mutations</button>
     <button class="btn btn-success" id="btnNextStep">Advance Step &rarr;</button>
   </div>
 
@@ -213,15 +218,15 @@ Your goal is to reach the **Target Configuration** (on the right) in exactly the
 document.addEventListener("DOMContentLoaded", function () {
   // Game parameters
   let gridSize = 8;
-  let maxSteps = 3;
+  let maxSteps = 1;
   let maxFlipsPerStep = 2;
 
   // Game state
   let currentStep = 0;
-  let startGridState = [];   // initial grid state at step 0
-  let targetGridState = [];  // target grid state at the final step
-  let currentGrid = [];      // current user grid state
-  let stepStartGrid = [];    // state at the beginning of current step
+  let startGridState = [];   
+  let targetGridState = [];  
+  let currentGrid = [];      
+  let stepStartGrid = [];    
   let isGameOver = false;
 
   // DOM Elements
@@ -267,10 +272,8 @@ document.addEventListener("DOMContentLoaded", function () {
     resultBanner.className = "banner";
     resultBanner.textContent = "";
 
-    // Generate puzzle and target guarantees solvability
     generateSolvableInstance();
 
-    // Copy start state
     currentGrid = cloneGrid(startGridState);
     stepStartGrid = cloneGrid(startGridState);
 
@@ -318,7 +321,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 2. Simulate forwards with random flips per step
     for (let s = 0; s < maxSteps; s++) {
-      // Pick random number of flips from 0 up to maxFlipsPerStep
       const numFlips = maxFlipsPerStep > 0 
         ? Math.floor(Math.random() * (maxFlipsPerStep + 1)) 
         : 0;
@@ -332,10 +334,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (coords.length === 0) break;
         const idx = Math.floor(Math.random() * coords.length);
         const [fr, fc] = coords.splice(idx, 1)[0];
-        grid[fr][fc] = 1 - grid[fr][fc]; // Flip cell
+        grid[fr][fc] = 1 - grid[fr][fc];
       }
 
-      // Step Conway forward
       grid = computeNextGeneration(grid);
     }
 
@@ -361,11 +362,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const flipsUsed = getFlipsUsedInStep();
 
     if (!currentlyFlipped && flipsUsed >= maxFlipsPerStep) {
-      // Max flips reached for this step
       return;
     }
 
-    // Toggle cell
     currentGrid[r][c] = 1 - currentGrid[r][c];
     
     updateUI();
@@ -382,7 +381,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function advanceStep() {
     if (isGameOver || currentStep >= maxSteps) return;
 
-    // Advance Conway Game of Life logic
     currentGrid = computeNextGeneration(currentGrid);
     stepStartGrid = cloneGrid(currentGrid);
     currentStep++;
@@ -390,7 +388,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateUI();
     renderInteractiveGrid();
 
-    // Check game end condition
     if (currentStep === maxSteps) {
       checkWinCondition();
     }
@@ -448,7 +445,13 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let r = 0; r < gridSize; r++) {
       for (let c = 0; c < gridSize; c++) {
         const cell = document.createElement("div");
-        cell.className = "grid-cell" + (currentGrid[r][c] === 1 ? " alive" : "");
+        const isAlive = currentGrid[r][c] === 1;
+        const isMutated = currentGrid[r][c] !== stepStartGrid[r][c];
+
+        cell.className = "grid-cell" + 
+                         (isAlive ? " alive" : "") + 
+                         (isMutated ? " mutated" : "");
+
         cell.onclick = () => handleCellClick(r, c);
         currentGridEl.appendChild(cell);
       }
