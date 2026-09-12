@@ -1,10 +1,28 @@
 ---
 layout: page
-title: Path of Life
-permalink: /path/
+title: Conway's Mutations
+permalink: /game/
 nav: false
-#nav_order: 5
+sitemap: false
 ---
+
+# Conway's Mutations
+
+**Conway's Mutations** is a puzzle game inspired by John Conway's famous [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) cellular automaton.
+
+### Evolution Rules
+At each step, the grid evolves according to the classic Game of Life rules:
+* **Underpopulation:** Any live cell with fewer than two live neighbors dies.
+* **Survival:** Any live cell with two or three live neighbors lives on to the next generation.
+* **Overpopulation:** Any live cell with more than three live neighbors dies.
+* **Reproduction:** Any dead cell with exactly three live neighbors becomes a live cell.
+
+### How to Play
+Before each step, you can induce **mutations** by clicking on cells to flip their state (alive to dead, or vice versa). Once you have placed your mutations for the step, advance the board to let the evolution rules take over.
+
+Your goal is to reach the **Target Configuration** (on the right) in exactly the prescribed number of steps.
+
+> **Pro-Tip:** *Conway's Mutations* is considerably harder than it looks! Because a single mutated cell can completely alter the future of the entire grid, we strongly recommend starting with **1 step** while you get a feel for the mechanics.
 
 <style>
   .game-container {
