@@ -290,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return next;
   }
 
-  // Generate a puzzle guaranteed to have a solution by working forward
   function generateSolvableInstance() {
     // 1. Random starting state (~35% filled)
     let grid = Array.from({ length: gridSize }, () =>
@@ -301,8 +300,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 2. Simulate forwards with random flips per step
     for (let s = 0; s < maxSteps; s++) {
-      // Pick random number of flips (1 up to maxFlipsPerStep)
-      const numFlips = Math.floor(Math.random() * maxFlipsPerStep) + 1;
+      // Pick random number of flips from 0 up to maxFlipsPerStep
+      const numFlips = maxFlipsPerStep > 0 
+        ? Math.floor(Math.random() * (maxFlipsPerStep + 1)) 
+        : 0;
+
       const coords = [];
       for (let r = 0; r < gridSize; r++) {
         for (let c = 0; c < gridSize; c++) coords.push([r, c]);
