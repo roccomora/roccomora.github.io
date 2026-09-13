@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ConwaysMutations
+title: Conway's Mutations
 permalink: /conway/
 nav: true
 nav_order: 5
