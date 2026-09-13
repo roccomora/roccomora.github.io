@@ -1,22 +1,22 @@
 ---
 layout: page
-title: Conway's Mutations
+title: ConwaysMutations
 permalink: /conway/
-nav: false
-sitemap: false
+nav: true
+nav_order: 2
 ---
 
 **Conway's Mutations** is a puzzle game inspired by John Conway's famous [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) cellular automaton.
 
 ### Evolution Rules
 The grid consists of **black cells (alive)** and **white cells (dead)**. At each step, the grid evolves according to the classic Game of Life rules:
-* **Underpopulation:** Any live (black) cell with fewer than two live neighbors dies (turns white).
-* **Survival:** Any live (black) cell with two or three live neighbors lives on to the next generation.
-* **Overpopulation:** Any live (black) cell with more than three live neighbors dies (turns white).
-* **Reproduction:** Any dead (white) cell with exactly three live neighbors becomes a live (black) cell.
+* **Underpopulation:** Any live cell with fewer than two live neighbors dies.
+* **Survival:** Any live cell with two or three live neighbors lives on to the next generation.
+* **Overpopulation:** Any live cell with more than three live neighbors dies.
+* **Reproduction:** Any dead cell with exactly three live neighbors becomes a live cell.
 
 ### How to Play
-Before advancing each step, you can induce **mutations** by clicking on cells on the left grid to flip their state (black to white or vice versa). 
+Before advancing each step, you will induce **mutations** by clicking on cells on the left grid to flip their state (black to white or vice versa). 
 * Mutated cells are highlighted with a **red border** so you can easily track your changes.
 * Clicking a mutated cell again will revert it to its original step state and remove the red border.
 
@@ -165,19 +165,19 @@ Once you have placed your mutations for the current step, click **Advance Step**
   <div class="controls-panel">
     <div class="slider-group">
       <label for="sizeSlider">Grid Size (N x N):</label>
-      <input type="range" id="sizeSlider" min="5" max="15" value="8">
+      <input type="range" id="sizeSlider" min="4" max="8" value="5">
       <span class="slider-value" id="sizeVal">8</span>
     </div>
     
     <div class="slider-group">
       <label for="stepsSlider">Steps Required:</label>
-      <input type="range" id="stepsSlider" min="1" max="8" value="1">
+      <input type="range" id="stepsSlider" min="1" max="5" value="2">
       <span class="slider-value" id="stepsVal">1</span>
     </div>
 
     <div class="slider-group">
-      <label for="flipsSlider">Mutations Allowed per Step:</label>
-      <input type="range" id="flipsSlider" min="0" max="5" value="2">
+      <label for="flipsSlider">Mutations per Step:</label>
+      <input type="range" id="flipsSlider" min="1" max="5" value="1">
       <span class="slider-value" id="flipsVal">2</span>
     </div>
 
@@ -206,8 +206,8 @@ Once you have placed your mutations for the current step, click **Advance Step**
 
   <!-- Action Buttons -->
   <div class="btn-action-group">
-    <button class="btn btn-secondary" id="btnResetStep">Reset Step Mutations</button>
-    <button class="btn btn-success" id="btnNextStep">Advance Step &rarr;</button>
+    <button class="btn btn-secondary" id="btnResetStep">Reset mutations</button>
+    <button class="btn btn-success" id="btnNextStep">Advance step &rarr;</button>
   </div>
 
   <!-- Victory / Defeat Message -->
@@ -379,7 +379,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function advanceStep() {
-    if (isGameOver || currentStep >= maxSteps) return;
+    // Only allow advancing if not game over, steps remaining, AND exact number of mutations placed
+    if (isGameOver || currentStep >= maxSteps || getFlipsUsedInStep() !== maxFlipsPerStep) return;
 
     currentGrid = computeNextGeneration(currentGrid);
     stepStartGrid = cloneGrid(currentGrid);
@@ -426,7 +427,10 @@ document.addEventListener("DOMContentLoaded", function () {
     flipsLeftText.textContent = maxFlipsPerStep - flipsUsed;
 
     const canInteract = currentStep < maxSteps && !isGameOver;
-    btnNextStep.disabled = !canInteract;
+    const hasExactMutations = flipsUsed === maxFlipsPerStep;
+
+    // Enable "Advance Step" button ONLY when exact required mutations are placed
+    btnNextStep.disabled = !(canInteract && hasExactMutations);
     btnResetStep.disabled = !canInteract;
   }
 
