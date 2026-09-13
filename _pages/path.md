@@ -166,13 +166,13 @@ Once you have placed your mutations for the current step, click **Advance Step**
     <div class="slider-group">
       <label for="sizeSlider">Grid Size (N x N):</label>
       <input type="range" id="sizeSlider" min="4" max="8" value="5">
-      <span class="slider-value" id="sizeVal">8</span>
+      <span class="slider-value" id="sizeVal">5</span>
     </div>
     
     <div class="slider-group">
       <label for="stepsSlider">Steps Required:</label>
       <input type="range" id="stepsSlider" min="1" max="5" value="2">
-      <span class="slider-value" id="stepsVal">1</span>
+      <span class="slider-value" id="stepsVal">2</span>
     </div>
 
     <div class="slider-group">
@@ -217,9 +217,9 @@ Once you have placed your mutations for the current step, click **Advance Step**
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Game parameters
-  let gridSize = 8;
-  let maxSteps = 1;
-  let maxFlipsPerStep = 2;
+  let gridSize = 5;
+  let maxSteps = 2;
+  let maxFlipsPerStep = 1;
 
   // Game state
   let currentStep = 0;
