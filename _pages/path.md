@@ -178,7 +178,7 @@ Once you have placed your mutations for the current step, click **Advance Step**
     <div class="slider-group">
       <label for="flipsSlider">Mutations per Step:</label>
       <input type="range" id="flipsSlider" min="1" max="5" value="1">
-      <span class="slider-value" id="flipsVal">2</span>
+      <span class="slider-value" id="flipsVal">1</span>
     </div>
 
     <div style="text-align: center; margin-top: 15px;">
@@ -195,11 +195,11 @@ Once you have placed your mutations for the current step, click **Advance Step**
   <!-- Boards Side by Side -->
   <div class="boards-wrapper">
     <div class="board-box">
-      <h4>Current State (Interactive)</h4>
+      <h4>Current State</h4>
       <div id="currentGrid" class="grid-board interactive"></div>
     </div>
     <div class="board-box">
-      <h4>Target Goal</h4>
+      <h4>Target configuration</h4>
       <div id="targetGrid" class="grid-board"></div>
     </div>
   </div>
