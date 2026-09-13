@@ -3,7 +3,7 @@ layout: page
 title: ConwaysMutations
 permalink: /conway/
 nav: true
-nav_order: 2
+nav_order: 5
 ---
 
 **Conway's Mutations** is a puzzle game inspired by John Conway's famous [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) cellular automaton.
