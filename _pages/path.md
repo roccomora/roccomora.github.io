@@ -312,35 +312,44 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function generateSolvableInstance() {
-    // 1. Random starting state (~35% filled)
-    let grid = Array.from({ length: gridSize }, () =>
-      Array.from({ length: gridSize }, () => Math.random() < 0.35 ? 1 : 0)
-    );
+    let isAllDead = true;
 
-    startGridState = cloneGrid(grid);
+    while (isAllDead) {
+      // 1. Random starting state (~35% filled)
+      let grid = Array.from({ length: gridSize }, () =>
+        Array.from({ length: gridSize }, () => Math.random() < 0.35 ? 1 : 0)
+      );
 
-    // 2. Simulate forwards with random flips per step
-    for (let s = 0; s < maxSteps; s++) {
-      const numFlips = maxFlipsPerStep > 0 
-        ? Math.floor(Math.random() * (maxFlipsPerStep + 1)) 
-        : 0;
+      startGridState = cloneGrid(grid);
 
-      const coords = [];
-      for (let r = 0; r < gridSize; r++) {
-        for (let c = 0; c < gridSize; c++) coords.push([r, c]);
+      // 2. Simulate forwards with random flips per step
+      for (let s = 0; s < maxSteps; s++) {
+        const numFlips = maxFlipsPerStep > 0 
+          ? Math.floor(Math.random() * (maxFlipsPerStep + 1)) 
+          : 0;
+
+        const coords = [];
+        for (let r = 0; r < gridSize; r++) {
+          for (let c = 0; c < gridSize; c++) coords.push([r, c]);
+        }
+
+        for (let f = 0; f < numFlips; f++) {
+          if (coords.length === 0) break;
+          const idx = Math.floor(Math.random() * coords.length);
+          const [fr, fc] = coords.splice(idx, 1)[0];
+          grid[fr][fc] = 1 - grid[fr][fc];
+        }
+
+        grid = computeNextGeneration(grid);
       }
 
-      for (let f = 0; f < numFlips; f++) {
-        if (coords.length === 0) break;
-        const idx = Math.floor(Math.random() * coords.length);
-        const [fr, fc] = coords.splice(idx, 1)[0];
-        grid[fr][fc] = 1 - grid[fr][fc];
-      }
+      // Rejection check: verify if at least one cell is alive (1)
+      isAllDead = grid.every(row => row.every(cell => cell === 0));
 
-      grid = computeNextGeneration(grid);
+      if (!isAllDead) {
+        targetGridState = grid;
+      }
     }
-
-    targetGridState = grid;
   }
 
   function getFlipsUsedInStep() {
