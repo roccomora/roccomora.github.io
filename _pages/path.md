@@ -207,6 +207,7 @@ Once you have placed your mutations for the current step, click **Advance Step**
   <!-- Action Buttons -->
   <div class="btn-action-group">
     <button class="btn btn-secondary" id="btnResetStep">Reset mutations</button>
+    <button class="btn btn-warning" id="btnRestart">Restart Puzzle</button>
     <button class="btn btn-success" id="btnNextStep">Advance step &rarr;</button>
   </div>
 
@@ -248,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnNewGame = document.getElementById("btnNewGame");
   const btnNextStep = document.getElementById("btnNextStep");
   const btnResetStep = document.getElementById("btnResetStep");
+  const btnRestart = document.getElementById("btnRestart");
   const resultBanner = document.getElementById("resultBanner");
 
   // Sync sliders text
@@ -259,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
   btnNewGame.onclick = initGame;
   btnResetStep.onclick = resetCurrentStepFlips;
   btnNextStep.onclick = advanceStep;
-
+  btnRestart.onclick = restartGame;
   initGame();
 
   function initGame() {
@@ -427,6 +429,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btnNextStep.disabled = true;
     btnResetStep.disabled = true;
+  }
+  
+  function restartGame() {
+    currentStep = 0;
+    isGameOver = false;
+    resultBanner.className = "banner";
+    resultBanner.textContent = "";
+
+    // Reset grid to initial starting configuration
+    currentGrid = cloneGrid(startGridState);
+    stepStartGrid = cloneGrid(startGridState);
+
+    updateUI();
+    renderInteractiveGrid();
   }
 
   function updateUI() {
