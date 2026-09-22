@@ -164,6 +164,15 @@ Once you have placed your mutations for the current step, click **Advance Step**
   <!-- Controls Panel -->
   <div class="controls-panel">
     <div class="slider-group">
+      <label for="levelSelect">Mode / Level:</label>
+        <select id="levelSelect" style="flex-grow: 1; padding: 6px; border-radius: 4px; border: 1px solid #ccc;">
+          <option value="random">Custom / Random Instance</option>
+          <option value="0">Level 1: Novice (5x5, 1 Step, 1 Mutation)</option>
+          <option value="1">Level 2: Easy (6x6, 1 Step, 2 Mutations)</option>
+          <option value="2">Level 3: Medium (7x7, 2 Steps, 2 Mutations)</option>
+          <option value="3">Level 4: Hard (8x8, 2 Steps, 3 Mutations)</option>
+          <option value="4">Level 5: Expert (8x8, 3 Steps, 3 Mutations)</option>
+        </select>
       <label for="sizeSlider">Grid Size (N x N):</label>
       <input type="range" id="sizeSlider" min="4" max="8" value="5">
       <span class="slider-value" id="sizeVal">5</span>
@@ -252,6 +261,90 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnRestart = document.getElementById("btnRestart");
   const resultBanner = document.getElementById("resultBanner");
 
+  // Preset Levels Definition
+  const PRESET_LEVELS = [
+    {
+      name: "Level 1: Novice",
+      gridSize: 5,
+      maxSteps: 1,
+      maxFlipsPerStep: 1,
+      startGrid: [
+        [0,1,0,0,0],
+        [0,0,1,0,0],
+        [1,1,1,0,0],
+        [0,0,0,0,0],
+        [0,0,0,0,0]
+      ],
+      solutionMutations: [ [[0, 0]] ]
+    },
+    {
+      name: "Level 2: Easy",
+      gridSize: 6,
+      maxSteps: 1,
+      maxFlipsPerStep: 2,
+      startGrid: [
+        [0,0,0,0,0,0],
+        [0,1,1,0,0,0],
+        [0,1,0,0,0,0],
+        [0,0,0,0,1,0],
+        [0,0,0,1,1,0],
+        [0,0,0,0,0,0]
+      ],
+      solutionMutations: [ [[1, 3], [3, 2]] ]
+    },
+    {
+      name: "Level 3: Medium",
+      gridSize: 7,
+      maxSteps: 2,
+      maxFlipsPerStep: 2,
+      startGrid: [
+        [0,0,0,0,0,0,0],
+        [0,0,1,1,0,0,0],
+        [0,0,1,0,0,0,0],
+        [0,0,0,0,0,0,0],
+        [0,0,0,0,1,1,0],
+        [0,0,0,0,1,0,0],
+        [0,0,0,0,0,0,0]
+      ],
+      solutionMutations: [ [[1, 0], [4, 6]], [[2, 3], [5, 3]] ]
+    },
+    {
+      name: "Level 4: Hard",
+      gridSize: 8,
+      maxSteps: 2,
+      maxFlipsPerStep: 3,
+      startGrid: [
+        [0,0,0,0,0,0,0,0],
+        [0,1,1,0,0,0,0,0],
+        [0,1,1,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,1,1,0],
+        [0,0,0,0,0,1,1,0],
+        [0,0,0,0,0,0,0,0]
+      ],
+      solutionMutations: [ [[0, 2], [3, 3], [7, 5]], [[1, 4], [2, 5], [6, 2]] ]
+    },
+    {
+      name: "Level 5: Expert",
+      gridSize: 8,
+      maxSteps: 3,
+      maxFlipsPerStep: 3,
+      startGrid: [
+        [0,1,0,0,0,1,0,0],
+        [0,0,1,0,1,0,0,0],
+        [1,1,1,0,0,0,1,0],
+        [0,0,0,0,0,1,1,0],
+        [0,1,1,0,0,0,0,0],
+        [0,1,0,0,0,1,1,1],
+        [0,0,0,1,0,1,0,0],
+        [0,0,0,1,0,0,1,0]
+      ],
+      solutionMutations: [ [[0, 0], [4, 4], [7, 7]], [[1, 1], [3, 2], [5, 6]], [[2, 2], [6, 1], [0, 7]] ]
+    }
+  ];
+
+  const levelSelect = document.getElementById("levelSelect");
   // Sync sliders text
   sizeSlider.oninput = () => sizeVal.textContent = sizeSlider.value;
   stepsSlider.oninput = () => stepsVal.textContent = stepsSlider.value;
@@ -264,7 +357,26 @@ document.addEventListener("DOMContentLoaded", function () {
   btnRestart.onclick = restartGame;
   initGame();
 
+  levelSelect.onchange = function() {
+    const isRandom = levelSelect.value === "random";
+    
+    // Toggle sliders availability
+    sizeSlider.disabled = !isRandom;
+    stepsSlider.disabled = !isRandom;
+    flipsSlider.disabled = !isRandom;
+
+    if (isRandom) {
+      initGame();
+    } else {
+      loadPresetLevel(parseInt(levelSelect.value));
+    }
+  };
+  
   function initGame() {
+    if (levelSelect.value !== "random") {
+      loadPresetLevel(parseInt(levelSelect.value));
+      return;
+    }
     gridSize = parseInt(sizeSlider.value);
     maxSteps = parseInt(stepsSlider.value);
     maxFlipsPerStep = parseInt(flipsSlider.value);
@@ -283,6 +395,46 @@ document.addEventListener("DOMContentLoaded", function () {
     renderGrids();
   }
 
+  // Load fixed level configuration
+  function loadPresetLevel(levelIndex) {
+    const level = PRESET_LEVELS[levelIndex];
+    gridSize = level.gridSize;
+    maxSteps = level.maxSteps;
+    maxFlipsPerStep = level.maxFlipsPerStep;
+
+    // Sync UI slider values
+    sizeSlider.value = gridSize;
+    stepsSlider.value = maxSteps;
+    flipsSlider.value = maxFlipsPerStep;
+    sizeVal.textContent = gridSize;
+    stepsVal.textContent = maxSteps;
+    flipsVal.textContent = maxFlipsPerStep;
+
+    startGridState = cloneGrid(level.startGrid);
+
+    // Compute target grid by running through solution mutations
+    let grid = cloneGrid(startGridState);
+    for (let s = 0; s < maxSteps; s++) {
+      const flips = level.solutionMutations[s] || [];
+      flips.forEach(([r, c]) => {
+        grid[r][c] = 1 - grid[r][c];
+      });
+      grid = computeNextGeneration(grid);
+    }
+    targetGridState = grid;
+
+    currentStep = 0;
+    isGameOver = false;
+    resultBanner.className = "banner";
+    resultBanner.textContent = "";
+
+    currentGrid = cloneGrid(startGridState);
+    stepStartGrid = cloneGrid(startGridState);
+
+    updateUI();
+    renderGrids();
+  }
+  
   function cloneGrid(grid) {
     return grid.map(row => [...row]);
   }
