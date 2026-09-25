@@ -41,19 +41,20 @@ Once you have placed your mutations for the current step, click **Advance Step**
 
   .slider-group {
     display: flex;
+    flex-wrap: wrap; /* Allows controls to wrap to a new line */
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 15px;
-    gap: 15px;
+    gap: 8px;
   }
 
   .slider-group label {
     font-weight: 600;
-    margin-bottom: 0;
-    min-width: 180px;
+    width: 100%; /* Forces the label to occupy the entire first line */
+    margin-bottom: 2px;
   }
 
-  .slider-group input[type="range"] {
+  .slider-group input[type="range"],
+  .slider-group select {
     flex-grow: 1;
   }
 
@@ -173,6 +174,9 @@ Once you have placed your mutations for the current step, click **Advance Step**
           <option value="3">Level 4: Hard (8x8, 2 Steps, 3 Mutations)</option>
           <option value="4">Level 5: Expert (8x8, 3 Steps, 3 Mutations)</option>
         </select>
+     </div>
+     
+   <div class="slider-group">
       <label for="sizeSlider">Grid Size (N x N):</label>
       <input type="range" id="sizeSlider" min="4" max="8" value="5">
       <span class="slider-value" id="sizeVal">5</span>
@@ -217,7 +221,7 @@ Once you have placed your mutations for the current step, click **Advance Step**
   <div class="btn-action-group">
     <button class="btn btn-secondary" id="btnResetStep">Reset mutations</button>
     <button class="btn btn-warning" id="btnRestart">Restart Puzzle</button>
-    <button class="btn btn-success" id="btnNextStep">Advance step &rarr;</button>
+    <button class="btn btn-success" id="btnNextStep">Advance step</button>
   </div>
 
   <!-- Victory / Defeat Message -->
