@@ -144,6 +144,7 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
+  - teaching
 exclude:
   - bin
   - Gemfile
