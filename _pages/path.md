@@ -49,7 +49,7 @@ Once you have placed your mutations for the current step, click **Advance Step**
 
   .slider-group label {
     font-weight: 600;
-    width: 100%; /* Forces the label to occupy the entire first line*/
+    width: 100%; /* Forces the label to occupy the entire first line */
     margin-bottom: 2px;
   }
 
