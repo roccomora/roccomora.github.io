@@ -41,7 +41,7 @@ Once you have placed your mutations for the current step, click **Advance Step**
 
   .slider-group {
     display: flex;
-    flex-wrap: wrap; /* Allows controls to wrap to a new line */
+    flex-wrap: wrap; /* Allows controls to wrap to a new line*/
     align-items: center;
     margin-bottom: 15px;
     gap: 8px;
