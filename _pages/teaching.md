@@ -14,7 +14,7 @@ nav_order: 3
 
   <div class="publications">
   <header class="post-header">
-    <h1 class="post-title">teaching at Universit&#233; de Montpellier</h1>
+    <h1 class="post-title">teaching at Universit&#233; de Montpellier </h1>
   </header>
 
   <article>
